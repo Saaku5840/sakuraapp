@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>未ログインの商品検索画面</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'message/css/style.css' %}">
+</head>
+
+<body>
+
+<div class="register-container">
+    <h2>商品の検索を行います。</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label>ユーザー名</label>
+            <input type="text" name="username" required>
+        </div>
+
+        <div class="form-group">
+            <label>パスワード</label>
+            <input type="password" name="password" required>
+        </div>
+
+        <button type="submit">登録する</button>
+    </form>
+
+</div>
+
+</body>
+</html>
+``
